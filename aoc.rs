@@ -58,7 +58,8 @@ fn run_today_script(path: &Path) {
 		Command::new("cmd")
 			.args([
 				"/C",
-				&format!("rustc {}", path.display()),
+				&format!("rustfmt {}", path.display()),
+				&format!("&& rustc {}", path.display()),
 				"&& main.exe",
 				"&& del main.exe",
 			])
@@ -68,7 +69,8 @@ fn run_today_script(path: &Path) {
 		Command::new("sh")
 			.args([
 				"-c",
-				&format!("rustc {}", path.display()),
+				&format!("rustfmt {}", path.display()),
+				&format!("&& rustc {}", path.display()),
 				"&& main.exe",
 				"&& rm main.exe",
 			])
