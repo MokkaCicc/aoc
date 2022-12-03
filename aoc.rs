@@ -48,8 +48,8 @@ fn create_today_script(path: &Path) {
 	let dir = path.parent().unwrap();
 	fs::create_dir_all(dir).unwrap();
 	match fs::File::create(path) {
-		Err(_) => println!("Unable to create the file"),
-		Ok(_) => (),
+		Err(_) => println!("Unable to create the file {}", path.display()),
+		Ok(_) => println!("File {} created", path.display()),
 	}
 }
 
@@ -90,17 +90,17 @@ fn main() {
 	if !argument_overrided {
 		println!("No arguments provided, using today date");
 	}
-	let today_path_string = &format!("./{}/{}/main.rs", args.year, args.day);
-	let today_path = Path::new(today_path_string);
-	if today_path.exists() {
-		println!("Script `{}` found, running it...", today_path.display());
+	let script_path_string = &format!("./{}/{}/main.rs", args.year, args.day);
+	let input_path_string = &format!("./{}/{}/input.txt", args.year, args.day);
+	let script_path = Path::new(script_path_string);
+	let input_path = Path::new(input_path_string);
+	if script_path.exists() {
+		println!("Script `{}` found, running it...", script_path_string);
 		println!();
-		run_today_script(&today_path);
+		run_today_script(&script_path);
 	} else {
-		println!(
-			"Script not found, creating the file `{}`",
-			today_path.display()
-		);
-		create_today_script(&today_path);
+		println!("Script not found, creating files...");
+		create_today_script(&script_path);
+		create_today_script(&input_path);
 	}
 }
