@@ -71,8 +71,8 @@ fn run_today_script(path: &Path) {
 				"-c",
 				&format!("rustfmt {}", path.display()),
 				&format!("&& rustc {}", path.display()),
-				"&& main.exe",
-				"&& rm main.exe",
+				"&& ./main",
+				"&& rm ./main",
 			])
 			.output()
 			.expect("failed to execute process")
