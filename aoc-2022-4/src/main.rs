@@ -10,8 +10,8 @@ fn is_overlaped_by(assignement1: &Vec<&str>, assignement2: &Vec<&str>) -> bool {
 }
 
 fn main() {
-	let input =
-		fs::read_to_string("./2022/4/input.txt").expect("Should have been able to read the file");
+	let input = fs::read_to_string("./aoc-2022-4/src/input.txt")
+		.expect("Should have been able to read the file");
 	let lines = input.split("\n");
 
 	let mut score1 = 0;

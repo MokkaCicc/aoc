@@ -1,0 +1,40 @@
+{
+	"configurations": [
+		{
+			"name": "Format",
+			"type": "cargo",
+			"cargoArgs": ["fmt"],
+		},
+		{
+			"name": "Lint",
+			"dependsOn": ["Format"],
+			"type": "cargo",
+			"cargoArgs": ["clippy"],
+		},
+		{
+			"name": "Run",
+			"dependsOn": ["Format"],
+			"type": "cargo",
+			"cargoArgs": ["run"],
+		},
+		{
+			"name": "Build",
+			"type": "cargo",
+			"cargoArgs": ["build", "--release"],
+		},
+		{
+			"name": "Deploy (Linux)",
+			"type": "command",
+			"dependsOn": ["Build"],
+			"program": "/bin/mv",
+			"args": ["./target/release/aoc", "./"],
+		},
+		{
+			"name": "Deploy (Windows)",
+			"type": "command",
+			"dependsOn": ["Build"],
+			"program": "cmd",
+			"args": ["-c", "./target/release/aoc", "./"],
+		}
+	]
+}

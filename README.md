@@ -8,9 +8,9 @@ You can build it with cargo :
 $ cargo build --release
 ```
 
-The `./target/release/aoc.exe` file will be created, you can run it from here or move it elsewhere.
+The `./target/release/aoc.exe` file will be created, move it to the root of a cargo project.
 
-When running this script, it will try to run the file `./[year]/[day]/main.rs` in the current directory. If the file does not exist, it will create it.
+When running this script, it will try to run the file `./aoc-[year]-[day]/src/main.rs`. If the file does not exist, it will create it within a new cargo workspace.
 
 By default, the script uses the current `year` and `day`, but it can be overrided with flags.
 ```bash

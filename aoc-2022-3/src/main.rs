@@ -21,8 +21,8 @@ fn find_common_item_3(bag1: &str, bag2: &str, bag3: &str) -> char {
 }
 
 fn main() {
-	let input =
-		fs::read_to_string("./2022/3/input.txt").expect("Should have been able to read the file");
+	let input = fs::read_to_string("./aoc-2022-3/src/input.txt")
+		.expect("Should have been able to read the file");
 	let lines = input.split("\n");
 
 	// part 1

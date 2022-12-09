@@ -1,5 +1,6 @@
+# build directory of cargo
 /target
-aoc.exe
+
+# exe files
 aoc
-main.exe
-main
+aoc.exe

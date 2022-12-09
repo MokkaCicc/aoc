@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 chrono = "0.4.23"
 clap = { version = "4.0.29", features = ["derive"] }
+toml_edit = "0.15.0"
 
-[[bin]]
-name = "aoc"
-path = "aoc.rs"
+[workspace]
+members = ["aoc-2022-1", "aoc-2022-2", "aoc-2022-3", "aoc-2022-4"]

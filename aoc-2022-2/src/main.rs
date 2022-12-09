@@ -23,8 +23,8 @@ fn part2_score(patterns: [&str; 3], his_letter: char) -> i32 {
 }
 
 fn main() {
-	let input =
-		fs::read_to_string("./2022/2/input.txt").expect("Should have been able to read the file");
+	let input = fs::read_to_string("./aoc-2022-2/src/input.txt")
+		.expect("Should have been able to read the file");
 	let lines = input.split("\n");
 
 	// part 1

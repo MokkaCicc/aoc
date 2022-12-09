@@ -1,8 +1,8 @@
 use std::fs;
 
 fn main() {
-	let input =
-		fs::read_to_string("./2022/1/input.txt").expect("Should have been able to read the file");
+	let input = fs::read_to_string("./aoc-2022-1/src/input.txt")
+		.expect("Should have been able to read the file");
 	let lines = input.split("\n");
 
 	let mut elves = Vec::new();
